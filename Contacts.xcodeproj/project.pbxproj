@@ -13,6 +13,8 @@
 		A943E75E1A54AFF200284757 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A943E75D1A54AFF200284757 /* Images.xcassets */; };
 		A943E7611A54AFF200284757 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A943E75F1A54AFF200284757 /* LaunchScreen.xib */; };
 		A943E76D1A54AFF200284757 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943E76C1A54AFF200284757 /* ContactsTests.swift */; };
+		A943E7771A54BA5400284757 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943E7761A54BA5400284757 /* Contacts.swift */; };
+		A9E642321A5DD22400ED9FD4 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		A943E7661A54AFF200284757 /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A943E76B1A54AFF200284757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A943E76C1A54AFF200284757 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
+		A943E7761A54BA5400284757 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				A943E7561A54AFF200284757 /* AppDelegate.swift */,
 				A943E7581A54AFF200284757 /* ViewController.swift */,
 				A943E75A1A54AFF200284757 /* Main.storyboard */,
+				A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */,
+				A943E7761A54BA5400284757 /* Contacts.swift */,
 				A943E75D1A54AFF200284757 /* Images.xcassets */,
 				A943E75F1A54AFF200284757 /* LaunchScreen.xib */,
 				A943E7541A54AFF200284757 /* Supporting Files */,
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A943E7591A54AFF200284757 /* ViewController.swift in Sources */,
+				A9E642321A5DD22400ED9FD4 /* ContactDetails.swift in Sources */,
 				A943E7571A54AFF200284757 /* AppDelegate.swift in Sources */,
+				A943E7771A54BA5400284757 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				A943E7721A54AFF200284757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A943E7731A54AFF200284757 /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				A943E7751A54AFF200284757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
