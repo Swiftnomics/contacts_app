@@ -15,16 +15,21 @@ class Contacts: UITableViewController {
         var phoneNumber: String
     }
     
-    var listOfContacts: [ContactInfo] = []
+    var listOfContacts: [ContactInfo] = [] //empty array
     
     var firstContact = ContactInfo(name: "John Norton", phoneNumber: "(316) 123-4567")
-    var secondContact = ContactInfo(name: "Joe Blow", phoneNumber: "(713) 123-4567")
+    var secondContact = ContactInfo(name: "Ian Bates", phoneNumber: "(713) 123-4567")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // create an edit button: 
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
         listOfContacts.append(firstContact)
         listOfContacts.append(secondContact)
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,6 +54,7 @@ class Contacts: UITableViewController {
         return 1
     }
     
+
 // Change the return value of the tableView.numberOfRowsInSection method to listOfContacts.count
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,8 +63,9 @@ class Contacts: UITableViewController {
         //return 0
          //return 10
         return listOfContacts.count
-       
     }
+    
+
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,14 +82,30 @@ class Contacts: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ToDetail" {
-            let indexPath = self.tableView.indexPathForSelectedRow()
-            let theSelectedRow = listOfContacts[indexPath!.row]
-            let theDestination = (segue.destinationViewController as ContactDetails)
             
-            theDestination.contactName = theSelectedRow.name
-            theDestination.contactPhone = theSelectedRow.phoneNumber
+//            let indexPath = self.tableView.indexPathForSelectedRow()
+//            let theSelectedRow = listOfContacts[indexPath!.row]
+//            let theDestination = (segue.destinationViewController as ContactDetails)
+            
+    // Joe would use in if let here so we don't need to unwrap the indexPath? 
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let theSelectedRow = listOfContacts[indexPath.row]
+                let theDestination = (segue.destinationViewController as ContactDetails)
+                
+                theDestination.contactName = theSelectedRow.name
+                theDestination.contactPhone = theSelectedRow.phoneNumber
+                
+            } //else {
+                // cancel the segue
+            // }
+        
+     
         }
     }
+    
+    
+    
     
     
     
