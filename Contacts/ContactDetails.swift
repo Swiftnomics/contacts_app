@@ -14,8 +14,8 @@ class ContactDetails: UIViewController {
     
     @IBOutlet weak var contactPhoneLabel: UILabel!
     
-    var contactName = ""
-    var contactPhone = ""
+    var contactName = " "
+    var contactPhone = " "
     
     
     override func viewDidLoad() {

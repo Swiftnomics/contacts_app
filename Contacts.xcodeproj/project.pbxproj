@@ -14,6 +14,7 @@
 		A943E7611A54AFF200284757 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A943E75F1A54AFF200284757 /* LaunchScreen.xib */; };
 		A943E76D1A54AFF200284757 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943E76C1A54AFF200284757 /* ContactsTests.swift */; };
 		A943E7771A54BA5400284757 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943E7761A54BA5400284757 /* Contacts.swift */; };
+		A993BC4A1A64D7530072D262 /* ContactInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993BC491A64D7530072D262 /* ContactInputViewController.swift */; };
 		A9E642321A5DD22400ED9FD4 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		A943E76B1A54AFF200284757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A943E76C1A54AFF200284757 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		A943E7761A54BA5400284757 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		A993BC491A64D7530072D262 /* ContactInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInputViewController.swift; sourceTree = "<group>"; };
 		A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				A943E7561A54AFF200284757 /* AppDelegate.swift */,
 				A943E7581A54AFF200284757 /* ViewController.swift */,
 				A943E75A1A54AFF200284757 /* Main.storyboard */,
+				A993BC491A64D7530072D262 /* ContactInputViewController.swift */,
 				A9E642311A5DD22300ED9FD4 /* ContactDetails.swift */,
 				A943E7761A54BA5400284757 /* Contacts.swift */,
 				A943E75D1A54AFF200284757 /* Images.xcassets */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A993BC4A1A64D7530072D262 /* ContactInputViewController.swift in Sources */,
 				A943E7591A54AFF200284757 /* ViewController.swift in Sources */,
 				A9E642321A5DD22400ED9FD4 /* ContactDetails.swift in Sources */,
 				A943E7571A54AFF200284757 /* AppDelegate.swift in Sources */,

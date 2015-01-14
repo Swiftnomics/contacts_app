@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Contacts: UITableViewController {
+class Contacts: UITableViewController, ContactInputViewControllerDelegate {
 
     struct ContactInfo {
         var name: String
@@ -19,16 +19,17 @@ class Contacts: UITableViewController {
     
     var firstContact = ContactInfo(name: "John Norton", phoneNumber: "(316) 123-4567")
     var secondContact = ContactInfo(name: "Ian Bates", phoneNumber: "(713) 123-4567")
+    //var thirdContact = ContactInfo(name: "Delete Me"), phoneNumber: "713-289-2838")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create an edit button: 
+        // create an edit button:
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         listOfContacts.append(firstContact)
         listOfContacts.append(secondContact)
-        
+        //listOfContacts.append(thirdContact)
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -86,8 +87,8 @@ class Contacts: UITableViewController {
 //            let indexPath = self.tableView.indexPathForSelectedRow()
 //            let theSelectedRow = listOfContacts[indexPath!.row]
 //            let theDestination = (segue.destinationViewController as ContactDetails)
-            
-    // Joe would use in if let here so we don't need to unwrap the indexPath? 
+        
+    // Joe would use if-let here so we don't need to unwrap the indexPath?
             
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let theSelectedRow = listOfContacts[indexPath.row]
@@ -102,7 +103,46 @@ class Contacts: UITableViewController {
         
      
         }
+        else if segue.identifier == "ToInput" {
+            (segue.destinationViewController as ContactInputViewController).delegate = self
+        }
     }
+    
+    
+// Add this function to delete a row: 
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            listOfContacts.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+    }
+    
+    
+// To move a row
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let fromContact = listOfContacts[sourceIndexPath.row]
+        listOfContacts.removeAtIndex(sourceIndexPath.row)
+        listOfContacts.insert(fromContact, atIndex: destinationIndexPath.row)
+    }
+    
+    
+// Capture the new contact from the ContactInputViewController class: 
+    
+    func didUpdateContact(senderClass: AnyObject, aName: String, aPhoneNumber: String) {
+        var newContact = ContactInfo(name: aName, phoneNumber: aPhoneNumber)
+        listOfContacts.append(newContact)
+        
+        tableView.reloadData()
+        
+    }
+    
+    
+    
     
     
     

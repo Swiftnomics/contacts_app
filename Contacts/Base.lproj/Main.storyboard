@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController id="MyR-DF-hGd" customClass="Contacts" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7aa-5o-JwK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -43,12 +43,17 @@
                             <outlet property="delegate" destination="MyR-DF-hGd" id="6cx-IL-ldw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contacts" id="34D-wk-iTK"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="34D-wk-iTK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Arf-jn-DeJ">
+                            <connections>
+                                <segue destination="oZm-ex-zMF" kind="show" identifier="ToInput" id="X4n-A0-78g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hg3-on-C5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="311"/>
+            <point key="canvasLocation" x="1578" y="311"/>
         </scene>
         <!--Contact Details-->
         <scene sceneID="GWG-DI-cuK">
@@ -59,7 +64,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wJp-n8-HDh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EFd-e0-SY4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVJ-0h-I5j">
@@ -92,7 +97,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Details" id="oX2-WG-rvn"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="contactNameLabel" destination="1BF-bS-WM4" id="Q7s-8x-sAB"/>
                         <outlet property="contactPhoneLabel" destination="nC2-cy-IgX" id="MmQ-Mr-UZr"/>
@@ -100,7 +104,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNf-lw-zR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="311"/>
+            <point key="canvasLocation" x="2421" y="45"/>
+        </scene>
+        <!--Contact Input-->
+        <scene sceneID="OF9-Vg-IuO">
+            <objects>
+                <viewController title="Contact Input" id="oZm-ex-zMF" customClass="ContactInputViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gvc-7Z-Xwj"/>
+                        <viewControllerLayoutGuide type="bottom" id="giW-Qh-Lby"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PaF-NN-CNU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK0-42-My7">
+                                <rect key="frame" x="66" y="139" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aN-gh-X33">
+                                <rect key="frame" x="66" y="238" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4La-dd-u69">
+                                <rect key="frame" x="66" y="174" width="262" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUD-Hq-cUd">
+                                <rect key="frame" x="66" y="285" width="262" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="4La-dd-u69" id="xWS-W3-Ndr"/>
+                        <outlet property="phoneField" destination="ZUD-Hq-cUd" id="LWb-dh-r0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qj5-R7-SjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2421" y="744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ll1-RM-lgi">
